@@ -50,15 +50,15 @@ class HotelViewSet(ModelViewSet):
     #     serializer = serializers.CommentSerializer(comments, many=True)
     #     return Response(serializer.data, status=200)
 
-    @action(['POST'], detail=True)
-    def favorite_action(self, request, pk):
-        hotel = self.get_object()
-        user = request.user
-        if user.favorites.filter(hotel=hotel).exists():
-            user.favorites.filter(hotel=hotel).delete()
-            return Response('Deleted from Favorites!', status=204)
-        Favorites.objects.create(owner=user, post=post)
-        return Response('Added to Favorites!', status=201)
+    # @action(['POST'], detail=True)
+    # def favorite_action(self, request, pk):
+    #     hotel = self.get_object()
+    #     user = request.user
+    #     if user.favorites.filter(hotel=hotel).exists():
+    #         user.favorites.filter(hotel=hotel).delete()
+    #         return Response('Deleted from Favorites!', status=204)
+    #     Favorites.objects.create(owner=user, post=post)
+    #     return Response('Added to Favorites!', status=201)
 
 
 

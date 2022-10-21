@@ -16,6 +16,7 @@ router = SimpleRouter()                                              #МАРШР
 router.register('types',TypeViewSet)                       #СОЗДАЕТ ПУТЬ ДЛЯ КАТЕГОРИИ
 router.register('cities',CityViewSet)
 router.register('hotels',HotelViewSet)
+# router.register('reviews',ReviewsViewSet)
 
 
 urlpatterns = [

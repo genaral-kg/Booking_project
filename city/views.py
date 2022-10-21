@@ -15,3 +15,5 @@ class CityViewSet(ModelViewSet):
         else:
             return [permissions.IsAdminUser()]
 
+# ПУТЬ К СИТИ
+# http://localhost:8000/api/v1/cities/

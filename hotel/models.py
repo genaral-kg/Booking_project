@@ -53,14 +53,14 @@ class Hotel(models.Model):
 # TODO: ЛАЙКИ
 # TODO:РЕЙТИНГ
  #  ФАВОРИТЫ ЮЗЕРА ТОЛЬКО ОПРЕДЕЛЕННОГО
-class Favorites(models.Model):
-    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE,
-                             related_name='favorites')
-    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,
-                             related_name='favorites')
-
-    class Meta:
-        unique_together = ['owner', 'hotel']
+# class Favorites(models.Model):
+#     owner = models.ForeignKey('auth.User', on_delete=models.CASCADE,
+#                              related_name='favorites')
+#     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,
+#                              related_name='favorites')
+#
+#     class Meta:
+#         unique_together = ['owner', 'hotel']
 
 
 
