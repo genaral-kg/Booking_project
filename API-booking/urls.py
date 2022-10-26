@@ -9,6 +9,7 @@ from rest_framework.routers import SimpleRouter
 from type.views import TypeViewSet
 from hotel.views import HotelViewSet
 from city.views import CityViewSet
+from rating.views import RatingViewSet
 from .yasg import urlpatterns as doc_urls
 
 
@@ -16,7 +17,7 @@ router = SimpleRouter()                                              #МАРШР
 router.register('types',TypeViewSet)                       #СОЗДАЕТ ПУТЬ ДЛЯ КАТЕГОРИИ
 router.register('cities',CityViewSet)
 router.register('hotels',HotelViewSet)
-# router.register('reviews',ReviewsViewSet)
+router.register('reviews',RatingViewSet)
 
 
 urlpatterns = [

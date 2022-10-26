@@ -28,6 +28,9 @@ class Hotel(models.Model):
     def __str__(self):
         return f'{self.title} - {self.type} - booking for one day {self.price}$'
 
+
+
+
 # TODO:COMMENTS !!!
 # class Comment(models.Model):
 #     owner = models.ForeignKey('auth.User', related_name='comments',

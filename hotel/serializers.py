@@ -1,10 +1,8 @@
 from django.db.models import Avg
 from rest_framework import serializers
-
-from rating.serializers import ReviewSerializer
 from type.models import Type
 from .models import Hotel
-
+from rating.serializers import ReviewSerializer
 
 # TODO: LIST_SERIALIZER
 # TODO:http://localhost:8000/api/v1/hotels/
@@ -22,7 +20,6 @@ class HotelListSerializer(serializers.ModelSerializer):
         repr['rating'] = instance.reviews.aggregate(Avg('rating'))['rating__avg']
         return repr
 
-
 #TODO: DETAIL-SERIALIZER
 class HotelDetailSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.email')
@@ -38,10 +35,38 @@ class HotelDetailSerializer(serializers.ModelSerializer):
         repr = super().to_representation(instance)
         repr['rating'] = instance.reviews.aggregate(Avg('rating'))['rating__avg']
         repr['rating_count'] = instance.reviews.count()
-        # repr['text'] = instance.reviews
-        # repr['texts'] = ReviewSerializer(instance.text).data
+        repr['reviews'] = ReviewSerializer(instance.reviews.all(), many=True).data
+        # a = ReviewSerializer(instance.reviews.all(), many=True).data
+        # for x in a:
+        #     repr['text'] = x['text']
 
         return repr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #TODO: COMMENT - SERIALIZER
 # class CommentSerializer(serializers.ModelSerializer):
