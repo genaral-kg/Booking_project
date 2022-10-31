@@ -29,6 +29,41 @@ class Hotel(models.Model):
         return f'{self.title} - {self.type} - booking for one day {self.price}$'
 
 
+# ---------------------------------------------------------------------------------
+class Like(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='liked')
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='likes')
+
+    class Meta:
+        unique_together = ['owner', 'hotel']
+
+
+class Favorites(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favorites')
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='favorites')
+
+    class Meta:
+        unique_together = ['owner', 'hotel']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # TODO:COMMENTS !!!

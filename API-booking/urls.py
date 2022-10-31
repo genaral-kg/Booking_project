@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/v1/',include(router.urls)),                               ### ЗДЕСЬ РОУТЕР РАБОТАЕТ СОЗДАЕТ ПУТЬ ДЛЯ TYPES - CITIES - HOTELS
     path('api/v1/accounts/', include('account.urls')),                  ### РЕГИСТРАЦИЯ ЛОГИН ЛОГАУТ
     # path('api/v1/reserves/',include('reserve.urls')),
-    # url(r'^$', schema_view)
+
 ]
-urlpatterns += doc_urls                    ### SWAGGER
+urlpatterns += doc_urls                    ### SWAGGER 💤💤💤
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
